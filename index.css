@@ -1,0 +1,12 @@
+#xmlOutput{
+  display: none;
+}
+
+@media (max-width: 576px) {
+    .addpersons-btn{
+      width: 100%;
+    }
+    .addpersons-btn .btn-primary{
+      float: right;
+    }
+  }

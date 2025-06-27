@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>xml-konverterare</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="index.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+
+    <body class="p-4">
+        <div class="container-fluid">
+            <h2 class="mb-4">Användare</h2>
+            <!-- Formulär för ny användare -->
+            <form id="userForm" class="row g-2 mb-4">
+                <div class="col-sm"><input type="text" class="form-control" placeholder="Förnamn" id="förnamn" required></div>
+                <div class="col-sm"><input type="text" class="form-control" placeholder="Efternamn" id="efternamn" required></div>
+                <div class="col-sm"><input type="text" class="form-control" placeholder="Adress" id="adress" required></div>
+                <div class="col-sm"><input type="text" class="form-control" placeholder="Telefon" id="telefon" required></div>
+                <div class="col-sm"><input type="text" class="form-control" placeholder="Personnummer" id="personnummer" required></div>
+                <div class="col-auto addpersons-btn">
+                    <button type="submit" class="btn btn-primary">Lägg till</button>
+                </div>
+            </form> 
+            <!--användartabell-->
+            <div class="row">
+                <div class="col">
+                    <div id="userList" class="d-flex flex-column gap-3"></div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-success mb-3 mt-3 float-end" id="exportBtn">Exportera till XML</button>
+                </div>
+            </div>
+
+            <pre class="mt-3 bg-light p-3" id="xmlOutput" ></pre>
+            
+        </div>
+        <!-- Modal: Lägg till familjemedlem -->
+        <div class="modal fade" id="familyModal" tabindex="-1" aria-labelledby="familyModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="familyForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="familyModalLabel">Lägg till familjemedlem</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Stäng"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control mb-2" id="famNamn" placeholder="Namn" required>
+                            <input type="text" class="form-control mb-2" id="famBorn" placeholder="Födelseår" required>
+                            <input type="text" class="form-control mb-2" id="famAdress" placeholder="Adress">
+                            <input type="text" class="form-control mb-2" id="famTelefon" placeholder="Telefon">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Avbryt</button>
+                            <button type="submit" class="btn btn-primary">Lägg till</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
